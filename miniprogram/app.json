@@ -1,7 +1,10 @@
 {
   "cloud": true,
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/travel/travel",
+    "pages/we/we",
+    "pages/travel_edit/travel_edit"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

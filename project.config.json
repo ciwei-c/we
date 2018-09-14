@@ -1,5 +1,5 @@
 {
-	"miniprogramRoot": "miniprogram/",
+  "miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": true,
@@ -28,9 +28,9 @@
 		"game": {
 			"list": []
 		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
 	}
 }

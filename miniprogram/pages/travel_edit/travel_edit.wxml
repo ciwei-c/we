@@ -1,0 +1,23 @@
+<i-panel title="基本信息">
+  <i-input value="{{ travelData.city }}" title="目的地" placeholder="目的地" disabled />
+  <view class="date-picker-wrap">
+    <picker mode="date" bindchange="onChooseStartDate">
+      <view class="picker"></view>
+    </picker>
+    <i-input value="{{ travelData.startDate }}" title="出行日期" placeholder="请选择出行时间" disabled/>
+  </view>
+  <view class="date-picker-wrap">
+    <picker mode="date" bindchange="onChooseEndDate">
+      <view class="picker"></view>
+    </picker>
+    <i-input value="{{ travelData.endDate }}" title="返程日期" placeholder="请选择返程时间" disabled/>
+  </view>
+</i-panel>
+<i-tab-bar current="{{ current }}" fixed color="#f759ab" bindchange="onClickBtn">
+  <i-tab-bar-item key="trash" icon="trash" current-icon="trash" title="删除"></i-tab-bar-item>
+  <i-tab-bar-item key="right" icon="right" current-icon="right" title="保存"></i-tab-bar-item>
+</i-tab-bar>
+<i-modal title="删除确认" visible="{{ isModalShow }}" actions="{{ actions }}" bind:click="onClickModal">
+  <view>删除后无法恢复哦</view>
+</i-modal>
+<i-toast id="toast" />

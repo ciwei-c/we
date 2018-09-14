@@ -1,0 +1,9 @@
+/* component/manage/mannage.wxss */
+@import "/app.wxss";
+.manage-page {
+  padding-top: 10px;
+}
+.list-wrap {
+  box-shadow: 0px 0px 5px -4px;
+  margin: 0px 10px 10px 10px;
+}

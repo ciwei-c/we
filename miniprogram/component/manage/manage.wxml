@@ -1,0 +1,17 @@
+<view class="manage-page">
+  <view class="list-wrap">
+    <i-cell title="我们" is-link url="/pages/we/we">
+      <i-icon slot="icon" type="like_fill" size="20" />
+    </i-cell>
+  </view>
+  <view class="list-wrap">
+    <i-cell title="旅游" is-link url="/pages/travel/travel">
+      <i-icon slot="icon" type="coordinates_fill" size="20" />
+    </i-cell>
+  </view>
+  <view class="list-wrap">
+    <i-cell title="纪念" is-link>
+      <i-icon slot="icon" type="time" size="20" />
+    </i-cell>
+  </view>
+</view>

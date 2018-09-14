@@ -1,1 +1,8 @@
-{}
+{
+  "usingComponents": {
+    "i-manage": "/component/manage/manage",
+    "i-home": "/component/home/home",
+    "i-footer": "/component/footer/footer",
+    "i-toast": "/iview/toast/index"
+  }
+}

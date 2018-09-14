@@ -1,4 +1,5 @@
 //app.js
+const { $Toast } = require('./iview/base/index');
 App({
   onLaunch: function () {
     
@@ -11,5 +12,6 @@ App({
     }
 
     this.globalData = {}
+    this.globalData.$toast = $Toast
   }
 })

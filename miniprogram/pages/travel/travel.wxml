@@ -1,0 +1,16 @@
+<view>
+  <i-cell-group wx:if="{{travelData.length > 0}}">
+    <i-cell wx:for="{{travelData}}" wx:key="{{index}}" title="{{item.travelData.city}}" is-link url="/pages/travel_edit/travel_edit?_id={{item._id}}"></i-cell>
+  </i-cell-group>
+  <i-load-more wx:if="{{travelData.length == 0}}" tip="暂无数据" loading="{{ false }}" />
+  <i-tab-bar fixed color="#f759ab">
+    <i-tab-bar-item key="add" icon="add" current-icon="add" title="添加目的地"></i-tab-bar-item>
+  </i-tab-bar>
+  <picker mode="region" bindchange="bindRegionChange" custom-item="{{customItem}}">
+    <view class="picker"></view>
+  </picker>
+  <i-toast id="toast" />
+  <view class="container">
+    <i-spin fix wx:if="{{isLoading}}"></i-spin>
+  </view>
+</view>

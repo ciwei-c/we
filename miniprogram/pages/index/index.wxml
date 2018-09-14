@@ -1,4 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-  111
+  <scroll-view scroll-y="true" style="height:{{scrollViewHeight}}" scroll-into-view="{{toView}}">
+    <i-home wx:if="{{current=='homepage'}}"></i-home>
+    <i-manage wx:if="{{current=='setup'}}"></i-manage>
+  </scroll-view>
+  <i-footer current="{{current}}" bindchange="handleChange"></i-footer>
 </view>
