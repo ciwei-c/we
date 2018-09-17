@@ -2,5 +2,5 @@
 @import "/app.wxss";
 
 .home--active{
-  font-size: 100px;
+  font-size: 100px; 
 }
