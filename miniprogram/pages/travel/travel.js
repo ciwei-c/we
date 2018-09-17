@@ -28,7 +28,7 @@ Page({
   },
   bindRegionChange(data){
     let detail = data.detail
-    if(this.data.travelData.findIndex(item => item.city === detail.value[1])>=0){
+    if(this.data.travelData.findIndex(item => item.travelData.city === detail.value[1])>=0){
       return $Toast({
         content: '已添加过的城市',
         type: 'warning'

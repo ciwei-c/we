@@ -1,6 +1,18 @@
 .pt20{
-  padding-top: 20rpx;
+  padding-top: 20px;
 }
 .mt20{
-  margin-top: 20rpx;
+  margin-top: 20px;
+}
+.mt40{
+  margin-top: 40px;
+}
+.pd50{
+  padding-bottom: 50px;
+}
+.mb20{
+  margin-bottom: 20px;
+}
+.split20{
+  height: 20px;
 }

@@ -10,6 +10,11 @@ Component({
             type: Boolean,
             value: false
         },
+
+        active: {
+          type: Boolean,
+          value: false
+        },
         thumb: {
             type: String,
             value: ''

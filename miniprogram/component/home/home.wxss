@@ -1,2 +1,6 @@
 /* component/home/index.wxss */
-@import "/app.wxss"
+@import "/app.wxss";
+
+.home--active{
+  font-size: 100px;
+}

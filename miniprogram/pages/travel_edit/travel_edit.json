@@ -5,6 +5,9 @@
     "i-modal": "/iview/modal/index",
     "i-panel": "/iview/panel/index",
     "i-toast": "/iview/toast/index",
-    "i-input": "/iview/input/index"
+    "i-input": "/iview/input/index",
+    "i-swipeout": "/iview/swipeout/index",
+    "i-button": "/iview/button/index",
+    "i-spin": "/iview/spin/index"
   }
 }

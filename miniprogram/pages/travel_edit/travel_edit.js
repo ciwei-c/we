@@ -5,20 +5,41 @@ Page({
   data: {
     current:"",
     _id:"",
+    scrollViewHeight:0,
+    isLoading:false,
     isModalShow:false,
+    swipeAction: [{
+        name: '删除',
+        color: '#fff',
+        fontsize: '20',
+        width: 100,
+        background: '#ed3f14'
+    }],
     travelData:{},
-    actions: [
-      {
+    travelWays:["飞机","动车","火车","大巴"],
+    customItem:"全部",
+    actions: [{
         name: '取消'
-      },
-      {
+      },{
         name: '删除',
         color: '#ed3f14',
         loading: false
-      }
-    ]
+    }]
+  },
+  loading(isLoading) {
+    this.setData({
+      isLoading: isLoading
+    })
   },
   onLoad: function (options) {
+    this.loading(true)
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          scrollViewHeight: `${res.windowHeight - 50}px`
+        })
+      }
+    })
     this.setData({
       _id:options._id
     })
@@ -27,9 +48,57 @@ Page({
   },
   getTravelData(){
     getDbByTravelId.get().then(res=>{
+      let _travelData = res.data.travelData
+      if (_travelData && !_travelData.touristList){
+        _travelData.touristList = []
+      }
       this.setData({
-        travelData:res.data.travelData
+        travelData:_travelData
       })
+      this.loading(false)
+    })
+  },
+  onAddTouristAttraction(){
+    wx.chooseLocation({
+      success:res =>{
+        console.log(res)
+        if(!res.address || !res.name){
+          $Toast({
+            content:"未选中地址，请选择详细地址",
+            type:"warning"
+          })
+        }else{
+          let _touristList = this.data.travelData.touristList
+          _touristList.push(res)
+          this.setData({
+            "travelData.touristList": _touristList
+          })
+        }
+      }
+    })
+  },
+  onClickAction(data) {
+    let _touristList = this.data.travelData.touristList
+    _touristList.splice(data.target.dataset.index,1)
+    this.setData({
+      "travelData.touristList": _touristList
+    })
+  },
+  onChooseTravelWay(data){
+    this.setData({
+      'travelData.travelWay': this.data.travelWays[Number(data.detail.value)]
+    })
+  },
+  onChooseFromCity(data){
+    let value = data.detail.value[1]
+    if(value === "全部"){
+      return $Toast({
+        content:"请选择省市",
+        type:"warning"
+      })
+    }
+    this.setData({
+      'travelData.fromCity': value
     })
   },
   onChooseStartDate(data) {
@@ -78,7 +147,12 @@ Page({
       data:{
         travelData:this.data.travelData
       }
-    }).then(res=>console.log(res))
+    }).then(res=>{
+      $Toast({
+        content: '保存成功',
+        type: 'success'
+      })
+    })
   },
   onDel(){
     const action = [...this.data.actions]
