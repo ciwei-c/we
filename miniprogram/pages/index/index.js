@@ -1,24 +1,42 @@
-//index.js
-const app = getApp()
-
+const db = wx.cloud.database()
 Page({
   data: {
-    current:"homepage",
-    scrollViewHeight:0
+    userInfo: {},
+    isShowDrawer: false
   },
   onLoad(){
-    wx.getSystemInfo({
-      success: res => {
-        this.setData({
-          scrollViewHeight: `${res.windowHeight-50}px`
-        })
-      }
+    const _userInfo = getApp().globalData.userInfo
+    if (_userInfo) {
+      this.setUserInfo(_userInfo)
+    } else {
+      wx.getUserInfo({
+        success: ret => {
+          getApp().globalData.userInfo = ret.userInfo
+          this.setUserInfo(ret.userInfo)
+        }
+      })
+    }
+  },
+  setUserInfo(info) {
+    this.setData({
+      userInfo: info
     })
   },
-  handleChange(data){
+  onClickTravel() {
+    wx.navigateTo({ url: '/pages/travel/travel' })
+  },
+  onShowDrawer(show) {
     this.setData({
-      current: data.detail
+      isShowDrawer: show
     })
+  },
+  onClickSetup() {
+    wx.navigateTo({ url: '/pages/setup/setup' })
+  },
+  onClickMine() {
+    this.onShowDrawer(true)
+  },
+  onToggleDrawer(data) {
+    this.onShowDrawer(!this.data.isShowDrawer)
   }
-
 })

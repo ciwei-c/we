@@ -1,0 +1,5 @@
+/* miniprogram/pages/travel_detail/travel_detail.wxss */
+.a-tag {
+  color: #3e76f6;
+  display: inline-block;
+}

@@ -1,1 +1,20 @@
 /**index.wxss**/
+@import "/app.wxss";
+.user-info-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.setup,.mine {
+  position: fixed;
+  right: 10px;
+}
+.setup {
+  bottom: 10px;
+}
+.mine {
+  bottom: 45px;
+}
+.tc {
+  text-align: center;
+}

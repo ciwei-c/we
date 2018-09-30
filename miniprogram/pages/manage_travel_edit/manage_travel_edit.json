@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-tab-bar": "/iview/tab-bar/index",
+    "i-tab-bar-item": "/iview/tab-bar-item/index",
+    "i-modal": "/iview/modal/index",
+    "i-panel": "/iview/panel/index",
+    "i-toast": "/iview/toast/index",
+    "i-input": "/iview/input/index",
+    "i-swipeout": "/iview/swipeout/index",
+    "i-button": "/iview/button/index",
+    "i-spin": "/iview/spin/index"
+  }
+}

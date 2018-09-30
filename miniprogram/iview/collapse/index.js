@@ -17,7 +17,7 @@ Component({
             allList.forEach((item) => {
                 if (params.name === item.data.name) {
                     item.setData({
-                        showContent: 'i-collapse-item-show-content'
+                      showContent: params.showContent ? "" : 'i-collapse-item-show-content'
                     });
                 } else {
                     item.setData({

@@ -1,9 +1,6 @@
-/* miniprogram/pages/travel/travel.wxss */
-.picker {
-  position:fixed;
-  width:100%;
-  bottom:0;
-  z-index:100;
-  opacity:0;
-  padding:25px;
+/* miniprogram/pages/travel.wxss */
+@import "/app.wxss";
+
+.home--active{
+  font-size: 100px; 
 }

@@ -1,8 +1,8 @@
 {
   "usingComponents": {
-    "i-manage": "/component/manage/manage",
-    "i-home": "/component/home/home",
-    "i-footer": "/component/footer/footer",
-    "i-toast": "/iview/toast/index"
+    "i-card": "/iview/card/index",
+    "i-drawer": "/component/drawer/drawer",
+    "i-icon": "/iview/icon/index",
+    "i-avatar": "/iview/avatar/index"
   }
 }

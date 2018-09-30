@@ -2,9 +2,13 @@
   "cloud": true,
   "pages": [
     "pages/index/index",
+    "pages/manage_travel/manage_travel",
+    "pages/manage_we/manage_we",
+    "pages/manage_travel_edit/manage_travel_edit",
     "pages/travel/travel",
-    "pages/we/we",
-    "pages/travel_edit/travel_edit"
+    "pages/travel_detail/travel_detail",
+    "pages/setup/setup",
+    "pages/manage_health/manage_health"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

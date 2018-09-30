@@ -1,6 +1,12 @@
 .pt20{
   padding-top: 20px;
 }
+.p10{
+  padding: 10px;
+}
+.p20{
+  padding: 20px;
+}
 .mt20{
   margin-top: 20px;
 }
@@ -13,6 +19,24 @@
 .mb20{
   margin-bottom: 20px;
 }
+.mb10{
+  margin-bottom: 10px;
+}
 .split20{
   height: 20px;
+}
+.bt {
+  border-top: 1px solid #dddee1; 
+}
+.ft12{
+  font-size: 12px;
+}
+.ft13{
+  font-size: 13px;
+}
+.ft14{
+  font-size: 14px;
+}
+.ft15{
+  font-size: 15px;
 }

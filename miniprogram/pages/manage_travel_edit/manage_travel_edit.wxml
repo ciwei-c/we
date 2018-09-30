@@ -1,0 +1,68 @@
+<scroll-view scroll-y="true" style="height:{{scrollViewHeight}}" scroll-into-view="{{toView}}">
+  <i-panel title="基本信息" hide-border="{{true}}">
+    <i-input value="{{ travelData.city }}" title="目的地" placeholder="目的地" disabled />
+    <view class="date-picker-wrap">
+      <picker mode="region" bindchange="onChooseFromCity" custom-item="{{customItem}}">
+        <view class="picker"></view>
+      </picker>
+      <i-input value="{{ travelData.fromCity }}" title="出发地" placeholder="请选择出发地" disabled/>
+    </view>
+    <view class="date-picker-wrap">
+      <picker mode="date" bindchange="onChooseStartDate">
+        <view class="picker"></view>
+      </picker>
+      <i-input value="{{ travelData.startDate }}" title="出行日期" placeholder="请选择出行时间" disabled/>
+    </view>
+    <view class="date-picker-wrap">
+      <picker mode="date" bindchange="onChooseEndDate">
+        <view class="picker"></view>
+      </picker>
+      <i-input value="{{ travelData.endDate }}" title="返程日期" placeholder="请选择返程时间" disabled/>
+    </view>
+    <view class="date-picker-wrap">
+      <picker mode="selector" bindchange="onChooseTravelWay" range="{{travelWays}}">
+        <view class="picker"></view>
+      </picker>
+      <i-input value="{{ travelData.travelWay }}" title="交通工具" placeholder="请选择交通工具" disabled/>
+    </view>
+  </i-panel>
+  <view class="split20"></view>
+  <i-panel title="住宿地点（左滑修改或删除）" class="mt40" hide-border="{{true}}">
+    <i-swipeout wx:if="{{travelData.accommodation}}" i-class="i-swipeout-demo-item" actions="{{swipeAction1}}" bindchange="onClickAction1">
+      <view slot="content">
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-h2">{{travelData.accommodation.name}}</view>
+          <view class="i-swipeout-des-detail">{{travelData.accommodation.address}}</view>
+        </view>
+      </view>
+    </i-swipeout>
+    <view wx:else>
+      <view class="no-data">暂无数据，请点击按钮添加</view>
+      <i-button bind:click="onAddLocation" type="primary" id="accommodation">添加住宿地点</i-button>
+    </view>
+  </i-panel>
+  <view class="split20"></view>
+  <i-panel title="景点列表（左滑删除）" class="mt40" hide-border="{{true}}">
+    <i-swipeout wx:if="{{travelData.touristList.length>0}}" wx:for="{{travelData.touristList}}" wx:key="{{index}}" i-class="i-swipeout-demo-item" actions="{{swipeAction2}}" bindchange="onClickAction2" data-index="{{index}}">
+      <view slot="content">
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-h2">{{item.name}}</view>
+          <view class="i-swipeout-des-detail">{{item.address}}</view>
+        </view>
+      </view>
+    </i-swipeout>
+    <view class="no-data" wx:if="{{!travelData.touristList.length}}">暂无数据，请点击按钮添加</view>
+    <i-button bind:click="onAddLocation" type="primary" id="touristList">新增旅游景点</i-button>
+  </i-panel>
+</scroll-view>
+<i-tab-bar current="{{ current }}" fixed color="#f759ab" bindchange="onClickBtn">
+  <i-tab-bar-item key="trash" icon="trash" current-icon="trash" title="删除"></i-tab-bar-item>
+  <i-tab-bar-item key="right" icon="right" current-icon="right" title="保存"></i-tab-bar-item>
+</i-tab-bar>
+<i-modal title="删除确认" visible="{{ isModalShow }}" actions="{{ actions }}" bind:click="onClickModal">
+  <view>删除后无法恢复哦</view>
+</i-modal>
+<i-toast id="toast" />
+<view class="container">
+  <i-spin fix wx:if="{{isLoading}}"></i-spin>
+</view>

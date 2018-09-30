@@ -1,0 +1,15 @@
+<view class="i-drawer-list">
+  <i-cell title="关于我们" is-link url="/pages/manage_we/manage_we">
+    <i-icon slot="icon" type="like_fill" size="20" />
+  </i-cell>
+</view>
+<view class="i-drawer-list">
+  <i-cell title="旅游攻略" is-link url="/pages/manage_travel/manage_travel">
+    <i-icon slot="icon" type="coordinates_fill" size="20" />
+  </i-cell>
+</view>
+<view class="i-drawer-list">
+  <i-cell title="身体记录" is-link url="/pages/manage_health/manage_health">
+    <i-icon slot="icon" type="time" size="20" />
+  </i-cell>
+</view>

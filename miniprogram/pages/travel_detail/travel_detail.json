@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-panel": "/iview/panel/index",
+    "i-collapse": "/iview/collapse/index",
+    "i-collapse-item": "/iview/collapse-item/index"
+  }
+}

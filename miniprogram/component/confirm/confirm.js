@@ -8,6 +8,14 @@ Component({
     show:{
       type:Boolean,
       value:false
+    },
+    date: {
+      type: Boolean,
+      value: false
+    },
+    placeholder: {
+      type: String,
+      value: ""
     }
   },
 
@@ -15,7 +23,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    inputValue:"上海"
+    inputValue:"",
+    selectDate:""
   },
 
   /**
@@ -33,15 +42,29 @@ Component({
       })
     },
     onConfirm(){
-      if (this.data.inputValue) {
-        this.triggerEvent('confirm', this.data.inputValue);
-        this.onCancel();
-      }else{
-        $Toast({
-          content: '地名不能为空',
+      if(!this.data.inputValue){
+        return $Toast({
+          content: "输入不能为空",
           type: 'warning'
         });
       }
+      if (this.data.date && !this.data.selectDate){
+        return $Toast({
+          content: "请选择日期",
+          type: 'warning'
+        });
+      }
+      this.triggerEvent('confirm', { inputValue: this.data.inputValue, date: this.data.selectDate});
+      this.onCancel();
+      this.setData({
+        inputValue: "",
+        selectDate: ""
+      })
+    },
+    bindDateChange(data){
+      this.setData({
+        selectDate:data.detail.value
+      })
     }
   }
 })

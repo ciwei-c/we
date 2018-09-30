@@ -1,0 +1,23 @@
+<i-panel title="住宿信息">
+  <view style="padding: 15px;">
+    <view class="ft13">
+      <view class="mb10">{{travelData.accommodation.name}}</view>
+      <view class="mb10">{{travelData.accommodation.address}}</view>
+    </view>
+    <map enable-scroll="{{false}}" id="accommodation" longitude="{{travelData.accommodation.longitude}}" latitude="{{travelData.accommodation.latitude}}" bindtap="onTapMap" markers="{{markers.accommodation}}" show-location="{{true}}" data-location="{{travelData.accommodation}}"></map>
+  </view>
+</i-panel>
+<i-panel title="景点信息">
+  <view class="caption-wrap ft14">
+    <i-collapse name="{{name}}" accordion>
+      <i-collapse-item name="{{item.name}}" wx:for="{{travelData.touristList}}" wx:key="{{index}}" title="{{item.name}}" i-class-title="collapse-item-title" i-class-content="collapse-item-content">
+        <view slot="content">
+          <view class='mb10'>
+            {{item.address}}
+            （<view bindtap="onTapMap" class="f13 a-tag" data-location="{{item}}">查看地图</view>）
+          </view>
+        </view>
+      </i-collapse-item>
+    </i-collapse>
+  </view>
+</i-panel>

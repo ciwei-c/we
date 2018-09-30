@@ -1,12 +1,6 @@
 {
   "usingComponents": {
-    "i-tab-bar": "/iview/tab-bar/index",
-    "i-tab-bar-item": "/iview/tab-bar-item/index",
-    "i-confirm": "/component/confirm/confirm",
-    "i-cell-group": "/iview/cell-group/index",
-    "i-cell": "/iview/cell/index",
-    "i-load-more": "/iview/load-more/index",
-    "i-spin": "/iview/spin/index",
-    "i-toast": "/iview/toast/index"
+    "i-card": "/iview/card/index",
+    "i-spin": "/iview/spin/index"
   }
 }

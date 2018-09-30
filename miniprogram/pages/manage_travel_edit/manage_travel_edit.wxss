@@ -1,0 +1,17 @@
+/* miniprogram/pages/travel_edit/travel_edit.wxss */
+.date-picker-wrap{
+  position: relative
+}
+.picker {
+  position:absolute;
+  width:100%;
+  bottom:0;
+  z-index:100;
+  opacity:0;
+  padding:25px;
+}
+.no-data{
+  padding-left:15px;
+  font-size:12px;
+  color:#a6a6a6;
+}

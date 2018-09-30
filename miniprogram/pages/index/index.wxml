@@ -1,8 +1,22 @@
 <!--index.wxml-->
 <view class="container">
-  <scroll-view scroll-y="true" style="height:{{scrollViewHeight}}" scroll-into-view="{{toView}}">
-    <i-home wx:if="{{current=='homepage'}}"></i-home>
-    <i-manage wx:if="{{current=='setup'}}"></i-manage>
-  </scroll-view>
-  <i-footer current="{{current}}" bindchange="handleChange"></i-footer>
+  <view class="p10"></view>
+  <i-card full="{{true}}" active="{{true}}" title="旅行计划" extra="进入详情" bindtap="onClickTravel">
+    <view slot="content">
+      <view>世界这么大，不妨去看看</view>
+    </view>
+    <view slot="footer">
+      <i-icon type="coordinates_fill" color="#80848f" />
+    </view>
+  </i-card>
+  <i-drawer show="{{isShowDrawer}}" bindtoggle="onToggleDrawer">
+    <view slot="content" class="tc">
+    
+      <i-avatar src="{{userInfo.avatarUrl}}" size="large"></i-avatar>
+      <view class="user-name f15">{{userInfo.nickName}}</view>
+      <view class="ft13">{{userInfo.city}}·{{userInfo.province}}·{{userInfo.country}}</view>
+    </view>
+  </i-drawer>
+  <i-icon class="setup" type="setup" size="25" bindtap="onClickSetup" />
+  <i-icon class="mine" type="mine" size="25" bindtap="onClickMine" />
 </view>
